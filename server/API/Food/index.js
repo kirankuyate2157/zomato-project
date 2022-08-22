@@ -5,7 +5,7 @@ import passport from "passport";
 //DATABASE MODEL
 import { FoodModel } from "../../database/allModels";
 
-const Router = express.Route();
+const Router = express.Router();
 
 /*
 Route       /r
