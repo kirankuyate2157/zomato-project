@@ -3,11 +3,10 @@ import express from "express";
 import passport from "passport";
 import multer from "multer";
 
+//Utilies for
+import { s3Upload } from "../../Utils/AWS/s3";
 //DATABASE MODEL
 import { ImageModel } from "../../database/allModels";
-
-//Utilites
-import { s3Upload } from "../../Utils/AWS/s3";
 
 const Router = express.Router();
 
