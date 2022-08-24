@@ -5,6 +5,8 @@ import passport from "passport";
 // Database modal
 import { ReviewModel } from "../../database/allModels";
 
+//validation
+import { ValidateReview } from "../../validation/review";
 const Router = express.Router();
 
 /*
@@ -17,6 +19,8 @@ Method    POST
 */
 Router.post("/new", async (req, res) => {
   try {
+    await ValidateReview(req.params);
+
     const { reviewData } = req.body;
     await ReviewModel.create(reviewData);
 
