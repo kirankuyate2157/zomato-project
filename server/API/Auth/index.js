@@ -5,6 +5,8 @@ import passport from "passport";
 // Models
 import { UserModel } from "../../database/user";
 
+//validation
+import { ValidateSignup, ValidateSignin } from "../../validation/auth";
 const Router = express.Router();
 
 /*
@@ -17,6 +19,8 @@ Route       /Signup
 
 Router.post("/signup", async (req, res) => {
   try {
+    await ValidateSignup(req.body.credentials);
+
     await UserModel.findByEmailAndPhoneNumber(req.body.credentials);
 
     //save to DB
@@ -42,6 +46,8 @@ Route       /Signup
 
 Router.post("/signin", async (req, res) => {
   try {
+    await ValidateSignin(req.body.credentials);
+
     const user = await UserModel.findByEmailAndPassword(req.body.credentials);
     //generate JWT auth token
     const token = user.generateJwtToken();
