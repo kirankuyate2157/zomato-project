@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <>
-      <div className="App"></div>
-    </>
-  );
+  return <h1 className="text-blue-700 ">hello tailwindcss 😎</h1>;
 }
 
 export default App;
