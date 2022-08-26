@@ -1,18 +1,16 @@
-//HOC
-// import HomeLayoutHOC from "./HOC/Home.Hoc";
-import { Routes, Route } from "react-router-dom";
-//Component
-// import Temp from "./Components/temp";
+import { Route, Routes } from "react-router-dom";
 import HomeLayout from "./Layout/Home.Layout";
+import Temp from "./Components/temp";
 
 function App() {
   return (
-    <>
-      <Routes>
-        {/* <HomeLayoutHOC path="/" exact element={Temp} /> */}
-        <Route path="/" element={<HomeLayout />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route element={<HomeLayout />}>
+        <Route path="/" element={<Temp />} />
+        ... other routes to render with Home layout and Navbar ...
+      </Route>
+      ... other routes to render without Home layout and Navbar ...
+    </Routes>
   );
 }
 

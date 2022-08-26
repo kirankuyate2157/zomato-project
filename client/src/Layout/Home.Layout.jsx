@@ -1,13 +1,14 @@
 import React from "react";
-
-// Components
+import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
-const HomeLayout = (props) => {
+const HomeLayout = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 lg:px-20 ">{props.children}</div>
+      <div className="container mx-auto px-4 lg:px-20 ">
+        <Outlet />
+      </div>
     </>
   );
 };
