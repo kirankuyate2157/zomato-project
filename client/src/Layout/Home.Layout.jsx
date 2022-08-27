@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import FoodTab from "../Components/FoodTab";
 import Navbar from "../Components/Navbar";
 
 const HomeLayout = () => {
@@ -9,6 +10,7 @@ const HomeLayout = () => {
       <div className="container mx-auto px-4 lg:px-20 ">
         <Outlet />
       </div>
+      <FoodTab />
     </>
   );
 };
