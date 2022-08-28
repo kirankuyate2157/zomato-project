@@ -9,6 +9,11 @@ const DeliveryCarousal = () => {
   const categories = [
     {
       image:
+        "https://b.zmtcdn.com/data/dish_images/da37534e55d5f1450ea9771c0627a8d81641644205.png",
+      title: "Rolls",
+    },
+    {
+      image:
         "https://b.zmtcdn.com/data/homepage_dish_data/4/76d788a2600b609bb0a08443e03df95b.png",
       title: "biryani",
     },
@@ -48,7 +53,7 @@ const DeliveryCarousal = () => {
     infinite: true,
     speed: 500,
     // centerMode: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
