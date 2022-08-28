@@ -60,8 +60,8 @@ const DeliveryCarousal = () => {
   };
 
   return (
-    <>
-      <h1 className="text-xl mb-4 font-semibold">
+    <div className=" bg-gray-100 container mx-auto px-4 lg:px-20 ">
+      <h1 className="text-3xl bold my-8 pt-5">
         Inspiration for your first order
       </h1>
       <div className="lg:hidden flex gap-3 lg:gap-0 flex-wrap justify-between">
@@ -77,7 +77,7 @@ const DeliveryCarousal = () => {
           ))}
         </Slider>
       </div>
-    </>
+    </div>
   );
 };
 

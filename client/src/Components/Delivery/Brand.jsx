@@ -15,55 +15,62 @@ const Brand = (props) => {
     "https://b.zmtcdn.com/data/brand_creatives/logos/d3c593271933bba9027ab27e60e7e9c9_1605068098.png?output-format=webp",
     "https://b.zmtcdn.com/data/brand_creatives/logos/acc68e452e5e8ea16d56292838cd0056_1659429791.png?output-format=webp",
   ];
-  const settings = {
-    infinite: false,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 4,
-    initialSlide: 0,
+  const SettingsCast = {
+    Infinity: false,
+    autoplay: false,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    InitialSlide: 0,
     nextArrow: <NextArrow />,
     PrevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
+          slidesToShow: 3,
+          slidesToScroll: 2,
           infinite: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 2,
+          focusMode: true,
           slidesToScroll: 2,
-          initialSlide: 2,
+          InitialSlide: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          focusMode: true,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
     ],
   };
+
   return (
-    <div className="my-5 mb-32">
-      <Slider {...settings}>
+    <div className=" mb-5 md:pt-9 ">
+      <h1 className="text-3xl bold  my-5">Top brands for you</h1>
+      <Slider {...SettingsCast}>
         {logos.map((logo) => (
-          <div className="w-24 h-24 mx-3 bg-white shadow">
-            <img
-              src={logo}
-              alt="brand"
-              className="w-full h-full object-cover"
-            />
+          <div className="flex flex-col bg-white items-center">
+            <div className="w-56 h-56 z-10 rounded-2xl border border-gray-100 shadow-md">
+              <img
+                src={logo}
+                alt="brand"
+                className="w-full h-full rounded-2xl  "
+              />
+            </div>
+            <h1 className="text-xl  text-gray-800">{props.castName}</h1>
+            <h5 className="text-sm  text-gray-500"> {props.role}</h5>
           </div>
         ))}
       </Slider>
     </div>
   );
 };
-
 export default Brand;
