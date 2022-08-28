@@ -7,10 +7,10 @@ const HomeLayout = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 lg:px-20 ">
+      <FoodTab />
+      <div className="container mx-auto px-4 lg:px-20  ">
         <Outlet />
       </div>
-      <FoodTab />
     </>
   );
 };

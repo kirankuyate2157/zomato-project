@@ -7,7 +7,7 @@ import classnames from "classnames";
 
 const MobileTabs = () => {
   //onclick icons change it tab functions
-  const [allTypes, setAllTypes] = useState([
+  const [allTypes] = useState([
     {
       id: "delivery",
       icon: <RiShoppingBag3Line />,
@@ -65,7 +65,7 @@ const MobileTabs = () => {
 };
 const LargeTabs = () => {
   //onclick icons change it tab functions
-  const [allTypes, setAllTypes] = useState([
+  const [allTypes] = useState([
     {
       id: "delivery",
       imageDefault:
@@ -119,10 +119,13 @@ const LargeTabs = () => {
                 }
               )}
             >
+              {console.log(items.activeColor)}
               <div
                 className={classnames(
                   "w-16 h-16 bg-gray-100 p-4 rounded-full",
-                  { [`bg-${items.activeColor}-100`]: type === items.id }
+                  {
+                    [`bg-${items.activeColor}-100`]: type === items.id,
+                  }
                 )}
               >
                 <img
