@@ -57,6 +57,34 @@ const DeliveryCarousal = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          autoplay: true,
+        },
+      },
+    ],
   };
 
   return (
@@ -64,13 +92,13 @@ const DeliveryCarousal = () => {
       <h1 className="text-3xl bold my-8 pt-5">
         Inspiration for your first order
       </h1>
-      <div className="lg:hidden flex gap-3 lg:gap-0 flex-wrap justify-between">
+      {/* <div className="lg:hidden flex gap-3 lg:gap-0 flex-wrap justify-between">
         {categories.map((food) => (
           <DeliveryCategory {...food} />
         ))}
-      </div>
+      </div> */}
 
-      <div className="hidden  lg:block">
+      <div className="">
         <Slider {...settings}>
           {categories.map((food) => (
             <DeliveryCategory {...food} />

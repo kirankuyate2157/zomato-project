@@ -16,7 +16,10 @@ const NutritionCarousal = () => {
   const settings = {
     arrows: true,
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 10000,
+    speed: 2000,
+
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
