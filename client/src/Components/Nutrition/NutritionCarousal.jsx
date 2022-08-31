@@ -56,7 +56,10 @@ const NutritionCarousal = () => {
         ))}
       </div>
 
-      <div className="hidden  lg:block">
+      <div className="hidden pb-5 lg:block">
+        <h1 className="text-xl mt-4 md:mt-8 md:text-3xl md:font-semibold">
+          Mostly ordered nutrition
+        </h1>
         <Slider {...settings}>
           {categories.map((food) => (
             <NutritionCarousalCard {...food} />
