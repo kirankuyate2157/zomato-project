@@ -55,7 +55,9 @@ const Delivery = () => {
       <div className=" container mx-auto px-4 lg:px-20 ">
         <Brand />
 
-        <h1 className="text-3xl bold my-8 pt-5">Order food online </h1>
+        <h1 className="text-xl mt-4 mb-2 md:mt-8 md:text-3xl md:font-semibold">
+          Order food online
+        </h1>
         <div className="flex justify-between  flex-wrap">
           {restaurantList.map((restaurant) => (
             <RestaurantCard

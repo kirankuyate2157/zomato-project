@@ -16,10 +16,11 @@ const Brand = (props) => {
     "https://b.zmtcdn.com/data/brand_creatives/logos/acc68e452e5e8ea16d56292838cd0056_1659429791.png?output-format=webp",
   ];
   const SettingsCast = {
-    Infinity: false,
+    Infinity: true,
     autoplay: false,
+    arrow: true,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     InitialSlide: 0,
     nextArrow: <NextArrow />,
     PrevArrow: <PrevArrow />,
