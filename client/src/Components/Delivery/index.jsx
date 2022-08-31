@@ -58,7 +58,11 @@ const Delivery = () => {
         <h1 className="text-3xl bold my-8 pt-5">Order food online </h1>
         <div className="flex justify-between  flex-wrap">
           {restaurantList.map((restaurant) => (
-            <RestaurantCard {...restaurant} key={restaurant._id} />
+            <RestaurantCard
+              {...restaurant}
+              key={restaurant._id}
+              whereIsThis="asf"
+            />
           ))}
         </div>
       </div>

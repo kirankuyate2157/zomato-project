@@ -2,6 +2,8 @@ import React from "react";
 import { AiTwotoneStar } from "react-icons/ai";
 
 const RestaurantCard = (props) => {
+  console.log(props.whereIsThisres);
+
   return (
     <>
       <div className="bg-white p-4 w-full mb-8  rounded-2xl transition duration-700 ease-in-out hover:shadow-xl  hover:border-gray-70  hover:border md:w-1/2 lg:w-1/3">
