@@ -1,27 +1,26 @@
 import React from "react";
-import RestaurantNavbar from "../Components/Navbar/restaurantNavbar";
 
 // components
+import RestaurantNavbar from "../Components/Navbar/restaurantNavbar";
+import ImageGrid from "../Components/Restaurant/ImageGrid";
 
 const RestaurantLayout = () => {
   return (
-    <div>
+    <>
+
       <RestaurantNavbar />
-      <div className="w-full h-48 md:hidden">
-        <img
-          src="https://b.zmtcdn.com/data/pictures/chains/3/10113/e23d7deb6de4e7830c649e4ec4a31184_featured_v2.png?output-format=webp"
-          alt="restaurant Images"
-          className="w-full h-full"
+      <div className="mt-5 container mx-auto px-4 lg:px-20 ">
+        <ImageGrid
+          images={[
+            "https://b.zmtcdn.com/data/pictures/2/18621252/f737723f080910e46c451c51b9bbd717.jpg?output-format=webp",
+            "https://b.zmtcdn.com/data/pictures/2/18621252/f737723f080910e46c451c51b9bbd717.jpg?output-format=webp",
+            "https://b.zmtcdn.com/data/pictures/2/18621252/f737723f080910e46c451c51b9bbd717.jpg?output-format=webp",
+            "https://b.zmtcdn.com/data/pictures/2/18621252/f737723f080910e46c451c51b9bbd717.jpg?output-format=webp",
+            "https://b.zmtcdn.com/data/pictures/2/18621252/f737723f080910e46c451c51b9bbd717.jpg?output-format=webp",
+          ]}
         />
       </div>
-      <div className="hidden flex gap-3">
-        <img
-          src="https://b.zmtcdn.com/data/pictures/chains/3/10113/e23d7deb6de4e7830c649e4ec4a31184_featured_v2.png?output-format=webp"
-          alt="restaurant Images"
-          className="w-full h-full"
-        />
-      </div>
-    </div>
+    </>
   );
 };
 
