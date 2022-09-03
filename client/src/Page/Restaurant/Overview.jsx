@@ -11,7 +11,7 @@ import MenuCollection from "../../Components/Restaurant/MenuCollection";
 import MenuSimilarRestaurantcard from "../../Components/Restaurant/MenuSimilarRestaurant";
 import { NextArrow, PrevArrow } from "../../Components/CarousalArrow";
 import ReviewCard from "../../Components/Restaurant/Reviews/reviewCard";
-import Mapview from "./Mapview";
+import Mapview from "../../Components/Restaurant/Mapview";
 
 const Overview = () => {
     const { id } = useParams();

@@ -38,7 +38,7 @@ const Mapview = (props) => {
                 <button className="flex items-center gap-2 px-3 py-2 text-gray-700 border border-gray-400 rounded-lg">
                     <span className="text-zomato-400">
                         <FaDirections />
-                    </span>{" "}
+                    </span>
                     Direction
                 </button>
             </div>
