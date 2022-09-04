@@ -5,8 +5,10 @@ import { useParams } from "react-router-dom";
 import Overview from "./Restaurant/Overview";
 import OrderOnline from "./Restaurant/OrderOnline";
 import Reviews from "./Restaurant/Reviews";
-import Temp from "../Components/temp";
+// import Temp from "../Components/temp";
 import Menu from "./Restaurant/Menu";
+import Photos from "./Restaurant/Potos";
+
 
 
 const RestaurantNavigation = () => {
@@ -17,7 +19,7 @@ const RestaurantNavigation = () => {
             {type === "order-online" && <OrderOnline />}
             {type === "reviews" && <Reviews />}
             {type === "menu" && <Menu />}
-            {type === "photos" && <Temp />}
+            {type === "photos" && <Photos />}
         </div>
     );
 };
