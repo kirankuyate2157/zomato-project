@@ -10,7 +10,9 @@ const Menu = () => {
             <div className="flex flex-wrap gap-3">
                 {menus.map((menu) => (
                     <MenuCollection {...menu} />
+
                 ))}
+                <h1>hello menu</h1>
             </div>
         </>
     );
