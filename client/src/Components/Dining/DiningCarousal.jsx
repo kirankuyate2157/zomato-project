@@ -11,6 +11,7 @@ const DiningCarousal = () => {
     infinite: true,
     dots: true,
     speed: 500,
+
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
@@ -30,6 +31,7 @@ const DiningCarousal = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+          center: true,
           initialSlide: 2,
         },
       },
@@ -38,6 +40,7 @@ const DiningCarousal = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true,
         },
       },
     ],
@@ -46,12 +49,12 @@ const DiningCarousal = () => {
   return (
     <div className=" container mx-auto px-4 lg:px-20 ">
       <h1 className="text-3xl  font-semibold my-8 pt-5">Collections</h1>
-      <div className="flex items-center justify-between mb-3">
-        <p className="items-center text-xl text-gray-600">
+      <div className="flex items-center justify-between gap-2 mb-3">
+        <p className="items-center  text-base md:text-xl text-gray-600">
           Explore curated lists of top restaurants, cafes, pubs, and bars in
           Pune, based on trends...
         </p>
-        <span className="flex text-red-500 items-center text-xl  cursor-pointer ">
+        <span className="flex text-red-500 items-center md:text-xl  cursor-pointer ">
           All collections in pune
           <BiChevronRight />
         </span>
