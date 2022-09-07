@@ -18,12 +18,20 @@ const DiningCarousal = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1264,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
           dots: true,
+        },
+      }, {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          center: true,
+          initialSlide: 2,
         },
       },
       {
@@ -31,7 +39,7 @@ const DiningCarousal = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          center: true,
+          centerMode: true,
           initialSlide: 2,
         },
       },
