@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 //components
 import DeliveryCarousal from "./DeliveryCarousal";
@@ -6,47 +7,16 @@ import Brand from "./Brand";
 import RestaurantCard from "../RestaurantCard";
 
 const Delivery = () => {
-  const [restaurantList] = useState([
-    {
-      _id: "123456",
-      photos: [
-        "https://b.zmtcdn.com/data/pictures/chains/8/6506988/82f36c57fd1c39cb8db1482fdca0be4f_o2_featured_v2.jpg",
-      ],
-      name: "KNS",
-      cuisine: ["Burger", "Pizza", "Fast Food", "Sandwich", " Beverages"],
-      averageCost: 100,
-      isPro: true,
-      isOff: 80,
-      durationOfdelivery: 48,
-      restaurantReviewValue: 4.7,
-    },
-    {
-      _id: "123456",
-      photos: [
-        "https://b.zmtcdn.com/data/pictures/chains/8/6506988/82f36c57fd1c39cb8db1482fdca0be4f_o2_featured_v2.jpg",
-      ],
-      name: "KNS",
-      cuisine: ["Burger", "Pizza", "Fast Food", "Sandwich", " Beverages"],
-      averageCost: 100,
-      isPro: true,
-      isOff: 80,
-      durationOfdelivery: 48,
-      restaurantReviewValue: 4.7,
-    },
-    {
-      _id: "123456",
-      photos: [
-        "https://b.zmtcdn.com/data/pictures/chains/8/6506988/82f36c57fd1c39cb8db1482fdca0be4f_o2_featured_v2.jpg",
-      ],
-      name: "KNS",
-      cuisine: ["Burger", "Pizza", "Fast Food", "Sandwich", " Beverages"],
-      averageCost: 100,
-      isPro: true,
-      isOff: 80,
-      durationOfdelivery: 48,
-      restaurantReviewValue: 4.7,
-    },
-  ]);
+  const [restaurantList, setRestaurantList] = useState([]);
+
+  const reduxState = useSelector(
+    (globalStore) => globalStore.restaurant.restaurants
+  );
+
+  useEffect(() => {
+    reduxState.restaurants && setRestaurantList(reduxState.restaurants);
+  }, [reduxState.restaurants]);
+
   return (
     <>
       <div className="bg-gray-100 h-96">

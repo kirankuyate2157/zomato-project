@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { AiTwotoneStar } from "react-icons/ai";
+import { getImage } from "../Redux/Reducer/Image/Image.action";
 
 const RestaurantCard = (props) => {
-  console.log(props.whereIsThisres);
+  const [image, setImage] = useState({
+    images: [],
+  });
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    props.photos &&
+      dispatch(getImage(props.photos)).then((data) =>
+        setImage(data.payload.image)
+      );
+  }, [props.photos]);
 
   return (
     <>
@@ -26,7 +39,7 @@ const RestaurantCard = (props) => {
             </span>
           </div>
           <img
-            src={props.photos.length && props.photos[0]}
+            src={image.images.length && image.images[0].location}
             alt="food"
             className="w-full h-full rounded-2xl"
           />
