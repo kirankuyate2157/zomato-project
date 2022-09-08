@@ -12,6 +12,7 @@ import Delivery from "../src/Components/Delivery";
 import RestaurantNavigation from "./Page/restaturantNavigation";
 import Checkout from "./Page/Checkout";
 import RedirectRestaurant from "./Page/Restaurant/Redirect";
+import GoogleAuth from "./Page/GoogleAuth";
 
 // axios global settings
 if (localStorage.zomatoUser) {
@@ -25,6 +26,7 @@ function App() {
       <Route element={<HomeLayout />}>
         <Route path="/" element={<Delivery />} />
         <Route path="/:type" element={<Home />} />
+        <Route path="/google/:token" element={<GoogleAuth />} />
         ... other routes to render with Home layout and Navbar ...
       </Route>
       <Route element={<RestaurantLayout />}>
