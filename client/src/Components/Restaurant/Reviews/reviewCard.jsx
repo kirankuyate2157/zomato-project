@@ -5,13 +5,12 @@ import dayjs from "dayjs";
 import { getUser } from "../../../Redux/Reducer/User/user.action";
 
 const ReviewCard = (props) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUser(props.user)).then((data) =>
-      // setUser(data.payload.user.user.user)
-      console.log(data)
+      setUser(data.payload.user.fullname)
     );
   }, []);
 
@@ -27,34 +26,33 @@ const ReviewCard = (props) => {
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
-            <div className="flex flex-col">
-              <h3 className="text-lg font-semibold">{user?.fullname}</h3>
-              <small className="text-gray-500">
-                5 Reviews &#8226; 3 Followers
-              </small>
-            </div>
-          </div>
-          <button className="text-zomato-400 border border-zomato-400 py-2 rounded-lg px-4">
-            Follow
-          </button>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-3">
-            <span className="text-white text-xs bg-green-700 px-2 py-1 rounded-lg flex items-center gap-1">
-              3 <TiStarFullOutline />
-            </span>
-            <h5 className="font-regular uppercase">
-              {props.isRestaurantReview ? "Dining" : "Delivery"}
-            </h5>
+            <h3 className="text-lg font-semibold">{user}</h3>{" "}
+            <h3 className="text-lg font-semibold">{user?.fullname}</h3>
             <small className="text-gray-500">
-              {dayjs(props.createdAt).format("DD MMM YYYY")}
+              5 Reviews &#8226; 3 Followers
             </small>
           </div>
-          <div className="w-full">
-            <p className="w-full text-gray-600 font-light text-base">
-              {props.reviewText}
-            </p>
-          </div>
+        </div>
+        <button className="text-zomato-400 border border-zomato-400 py-2 rounded-lg px-4">
+          Follow
+        </button>
+      </div>
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center gap-3">
+          <span className="text-white text-xs bg-green-700 px-2 py-1 rounded-lg flex items-center gap-1">
+            3 <TiStarFullOutline />
+          </span>
+          <h5 className="font-regular uppercase">
+            {props.isRestaurantReview ? "Dining" : "Delivery"}
+          </h5>
+          <small className="text-gray-500">
+            {dayjs(props.createdAt).format("DD MMM YYYY")}
+          </small>
+        </div>
+        <div className="w-full">
+          <p className="w-full text-gray-600 font-light text-base">
+            {props.reviewText}
+          </p>
         </div>
       </div>
     </>
