@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
-import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { RiSearch2Line } from "react-icons/ri";
 
 // components
@@ -30,9 +30,9 @@ const MobileNav = ({ SignIn, SignUp }) => {
           <FaUserAlt />
         </span>
         {isDropDownOpen && (
-          <div className="absolute shadow-lg py-3 -bottom-20 -right-4 w-full bg-white z-20 flex flex-col gap-2">
-            <button onClick={SignIn}>Sign In</button>
-            <button onClick={SignUp}>Sign Up</button>
+          <div className="absolute shadow-2xl py-3 -bottom-24 rounded -right-4 w-full bg-white z-20 flex flex-col gap-2">
+            <button onClick={SignIn} className="hover:text-zomato-500">Sign In</button>
+            <button onClick={SignUp} className="hover:text-zomato-500">Sign Up</button>
           </div>
         )}
       </div>
@@ -76,13 +76,13 @@ const LargeNav = ({ SignIn, SignUp }) => {
           <div className="ml-28 flex gap-4 ">
             <button
               onClick={SignIn}
-              className="text-gray-500 text-xl hover:text-gray-800"
+              className="text-gray-500 text-xl hover:text-gray-900"
             >
               Login
             </button>
             <button
               onClick={SignUp}
-              className="text-gray-500 text-xl hover:text-gray-800"
+              className="text-gray-500 text-xl hover:text-gray-00"
             >
               Signup
             </button>
