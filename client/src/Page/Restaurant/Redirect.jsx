@@ -8,7 +8,7 @@ const Redirect = () => {
     navigate(`/restaurant/123/overview`);
   }, []);
 
-  return <div></div>;
+  return <div>hii</div>;
 };
 
 export default Redirect;

@@ -31,8 +31,12 @@ const MobileNav = ({ SignIn, SignUp }) => {
         </span>
         {isDropDownOpen && (
           <div className="absolute shadow-2xl py-3 -bottom-24 rounded -right-4 w-full bg-white z-20 flex flex-col gap-2">
-            <button onClick={SignIn} className="hover:text-zomato-500">Sign In</button>
-            <button onClick={SignUp} className="hover:text-zomato-500">Sign Up</button>
+            <button onClick={SignIn} className="hover:text-zomato-500">
+              Sign In
+            </button>
+            <button onClick={SignUp} className="hover:text-zomato-500">
+              Sign Up
+            </button>
           </div>
         )}
       </div>
