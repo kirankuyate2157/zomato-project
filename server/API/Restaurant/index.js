@@ -35,6 +35,23 @@ Router.get("/", async (req, res) => {
 });
 
 /*
+Route       /new
+ Des        add new restaurant
+ Params     none
+ Access     PRIVATE
+ Method     POST
+*/
+
+Router.post("/new", async (req, res) => {
+  try {
+    const newRetaurant = await RestaurantModel.create(req.body.retaurantData);
+    return res.json({ restaurants: newRetaurant });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
+
+/*
 Route       /
  Des        get individual restaurant details based on the _id
  Params     id
