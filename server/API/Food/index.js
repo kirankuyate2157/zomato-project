@@ -50,6 +50,24 @@ Router.get("/:_id", async (req, res) => {
 });
 
 /*
+Route     /new
+Desc      add new food record to database
+Params    _id
+Access    PRIVATE
+Method    POST
+*/
+
+Router.post("/new", async (req, res) => {
+  try {
+    const { foodData } = req.body;
+    const newFood = await FoodModel.create(foodData);
+    return res.json({ foods: newFood });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
+
+/*
 Route       /c 
  Des        get all the Food details based on particular restaurant
  Params     id
