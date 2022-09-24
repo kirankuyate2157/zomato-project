@@ -5,7 +5,7 @@ const HeroLayout = () => {
   return (
     <>
       <HeroNav />
-      <div>
+      <div className="container px-8 md:px-20 mx-auto mt-20">
         <Outlet />
       </div>
       <div>Hero !!</div>
