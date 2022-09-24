@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 import HomeLayout from "./Layout/Home.Layout";
 import RestaurantLayout from "./Layout/Restaurant.layout";
 import CheckoutLayout from "./Layout/Checkout.layout";
+import HeroLayout from "./Layout/Hero.Layout";
 
 // import Temp from "./Components/temp";
 import Home from "./Page/Home";
@@ -15,7 +16,7 @@ import RestaurantNavigation from "./Page/restaturantNavigation";
 import Checkout from "./Page/Checkout";
 import RedirectRestaurant from "./Page/Restaurant/Redirect";
 import GoogleAuth from "./Page/GoogleAuth";
-
+import Hero from "./Page/Hero";
 // redux action
 import { getMyself } from "./Redux/Reducer/User/user.action";
 
@@ -33,6 +34,9 @@ function App() {
 
   return (
     <Routes>
+      <Route element={<HeroLayout />}>
+        <Route path="/hero" element={<Hero />} />
+      </Route>
       <Route element={<HomeLayout />}>
         <Route path="/" element={<Delivery />} />
         <Route path="/:type" element={<Home />} />
