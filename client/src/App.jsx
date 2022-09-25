@@ -35,10 +35,9 @@ function App() {
   return (
     <Routes>
       <Route element={<HeroLayout />}>
-        <Route path="/hero" element={<Hero />} />
+        <Route path="/" element={<Hero />} />
       </Route>
       <Route element={<HomeLayout />}>
-        <Route path="/" element={<Delivery />} />
         <Route path="/:type" element={<Home />} />
         <Route path="/google/:token" element={<GoogleAuth />} />
         ... other routes to render with Home layout and Navbar ...

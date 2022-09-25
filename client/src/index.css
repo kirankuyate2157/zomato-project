@@ -7,7 +7,7 @@
   height: inherit;
 }
 body {
-  background: #f8f4f2;
+  /* background: #f8f4f2; */
   font-family: Arial;
 }
 
@@ -56,6 +56,7 @@ body {
 
 .text-container h3 {
   margin: 20px 0px 10px 0px;
-  color: #04bcff;
+  color: #070b0c;
+  font-weight: bold;
   font-size: 18px;
 }

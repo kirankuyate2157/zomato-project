@@ -25,7 +25,8 @@ const DiningCarousal = () => {
           infinite: true,
           dots: true,
         },
-      }, {
+      },
+      {
         breakpoint: 900,
         settings: {
           slidesToShow: 2,
@@ -48,7 +49,7 @@ const DiningCarousal = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: true,
+          // centerMode: true,
         },
       },
     ],
