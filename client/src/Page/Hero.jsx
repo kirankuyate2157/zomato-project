@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HeroRestaurantCard from "../Components/HeroRestaurantCard";
 import Collections from "../Components/Dining/DiningCarousal";
-import LocationPlate from "../Components/locationPlate/LocationPlate";
-import LocationSeeMore from "../Components/locationPlate/locationSeeMore";
+import LocationPlate from "../Components/Plates/LocationPlate";
+import LocationSeeMore from "../Components/Plates/locationSeeMore";
+import ExploreOption from "../Components/Plates/ExploreOption";
 
 const Hero = () => {
   return (
@@ -55,6 +56,16 @@ const Hero = () => {
             <LocationPlate title="Karadi" place="1162" />
             <LocationPlate title="Kalyani nager" place="251" />{" "}
             <LocationSeeMore />
+          </div>
+          <h1 className="text-3xl  text-gray-800 bold my-8 pt-5">
+            Explore options near me
+          </h1>
+          <div className="flex flex-col mt-3  flex-wrap items-center gap-4">
+            <ExploreOption title="Popular cuisines near me" />
+            <ExploreOption title="Popular restaurant types near me" />
+            <ExploreOption title="Top Restaurant Chains" />
+            <ExploreOption title="Cities We Deliver To" />
+            <ExploreOption title="Popular cuisines near me" />
           </div>
         </div>
       </div>
