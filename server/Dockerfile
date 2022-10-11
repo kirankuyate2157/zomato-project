@@ -19,3 +19,5 @@ ENV rzp_secret=C94k79IKuALkwILTFTM5zccG
 ENV rzp_id=rzp_test_LHbhzBnKOdTaVY
 
 CMD ["npm","run","start",]
+
+
