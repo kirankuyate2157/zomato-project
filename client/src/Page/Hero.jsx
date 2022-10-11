@@ -68,7 +68,9 @@ const Hero = () => {
             <ExploreOption title="Popular cuisines near me" />
           </div>
         </div>
+
       </div>
+
     </>
   );
 };

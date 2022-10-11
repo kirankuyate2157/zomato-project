@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import DeliveryCarousal from "./DeliveryCarousal";
 import Brand from "./Brand";
 import RestaurantCard from "../RestaurantCard";
-
 const Delivery = () => {
   const [restaurantList, setRestaurantList] = useState([]);
 
@@ -28,6 +27,7 @@ const Delivery = () => {
         <h1 className="text-xl mt-4 mb-2 md:mt-8 md:text-3xl md:font-semibold">
           Order food online
         </h1>
+
         <div className="flex justify-between  flex-wrap">
           {restaurantList.map((restaurant) => (
             <RestaurantCard

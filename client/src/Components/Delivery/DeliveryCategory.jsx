@@ -30,9 +30,10 @@ const DeliveryLgCard = (props) => {
             className="w-full h-full object-cover rounded-full shadow-lg"
           />
         </div>
-        <div>
-          <h3 className="text-xl my-1 font-medium">{props.title}</h3>
-        </div>
+
+        <h3 className="text-xl my-1 text-gray-900 font-medium">
+          {props.title}
+        </h3>
       </div>
     </>
   );

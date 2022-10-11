@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import HeroNav from "../Components/Navbar/HeroNav";
+import HeroFooter from "../Components/Footer/Hero.Footer";
 const HeroLayout = () => {
   return (
     <>
@@ -9,6 +10,7 @@ const HeroLayout = () => {
         <Outlet />
       </div>
       <div>Hero !!</div>
+      <HeroFooter />
     </>
   );
 };
