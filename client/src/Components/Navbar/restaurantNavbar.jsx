@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 // components
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
+
 const MobileNav = ({ SignIn, SignUp }) => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const reduxState = useSelector((global) => global.user.user);

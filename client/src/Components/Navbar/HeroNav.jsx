@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { CgSmartphone } from "react-icons/cg";
 import { HiLocationMarker } from "react-icons/hi";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { RiSearch2Line } from "react-icons/ri";
+import gravatar from "gravatar";
+import { useSelector } from "react-redux";
 
 // components
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
 
-const HeroNav = () => {
+const LargeNav = () => {
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+
+  const reduxState = useSelector((global) => global.user.user);
+
   return (
     <>
       <div className="">
@@ -33,18 +39,41 @@ const HeroNav = () => {
             <button className="text-white text-xl hover:text-gray-200">
               Add restaurant
             </button>
-            <button
-              onClick={SignIn}
-              className="text-white text-xl hover:text-gray-200"
-            >
-              Login
-            </button>
-            <button
-              onClick={SignUp}
-              className="text-white text-xl  hover:text-gray-200"
-            >
-              Signup
-            </button>
+            {reduxState?.user?.fullname ? (
+              <div className=" gap-8 flex ml-5">
+                {" "}
+                <div
+                  onClick={() => setIsDropDownOpen((prev) => !prev)}
+                  className="border p-2 border-gray-300 text-zomato-400 w-full h-20 rounded-full"
+                >
+                  <img
+                    src={gravatar.url(reduxState?.user?.email)}
+                    alt={reduxState?.user?.email}
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+                {isDropDownOpen && (
+                  <div className="absolute shadow-lg py-3  -right-4 w-full bg-white z-30 flex flex-col gap-2">
+                    <button>Sign Out</button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className=" gap-8 flex ml-5 ">
+                <button
+                  onClick={SignIn}
+                  className="text-white text-xl  hover:text-gray-200"
+                >
+                  Login
+                </button>
+                <button
+                  onClick={SignUp}
+                  className="text-white text-xl  hover:text-gray-200"
+                >
+                  Signup
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
@@ -85,4 +114,21 @@ const HeroNav = () => {
     </>
   );
 };
+
+const HeroNav = () => {
+  const [openSignin, setOpenSignin] = useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
+
+  const openSignInmodal = () => setOpenSignin(true);
+  const openSignUpmodal = () => setOpenSignup(true);
+  return (
+    <>
+      <SignIn isOpen={openSignin} setIsOpen={setOpenSignin} />
+      <SignUp isOpen={openSignup} setIsOpen={setOpenSignup} />
+
+      <LargeNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
+    </>
+  );
+};
+
 export default HeroNav;
