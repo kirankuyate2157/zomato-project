@@ -170,11 +170,11 @@ const Overview = () => {
               address={reduxState?.address}
             />
           </div>
-          {/* <div className="my-4 flex flex-col gap-4">
+          <div className="my-4 flex flex-col gap-4">
             <ReviewCard />
             <ReviewCard />
             <ReviewCard />
-          </div> */}
+          </div>
           <div className="my-4 flex flex-col gap-4"></div>
         </div>
         <aside
