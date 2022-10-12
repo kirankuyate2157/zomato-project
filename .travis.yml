@@ -1,2 +1,23 @@
+sudo: required
 
+# Install Docker
+services:
+  - docker
 
+# Execute logic
+script:
+  - echo "Hello Students!"
+
+after_success:
+  # Build all the docker files
+  - docker build -t kiran2157/zomato-client ./client
+  - docker build -t kiran2157/zomato-server ./server
+  - docker build -t kiran2157/zomato-nginx ./nginx
+
+  # log in docker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  # push to docker hub
+  - docker push kiran2157/zomato-client
+  - docker push kiran2157/zomato-server
+  - docker push kiran2157/zomato-nginx
