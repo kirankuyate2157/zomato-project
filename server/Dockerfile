@@ -18,6 +18,6 @@ ENV MAILGUN__DOMAIN=sandboxfbe81d6f5c3e4480b1b5aca6a889db56.mailgun.org
 ENV rzp_secret=C94k79IKuALkwILTFTM5zccG
 ENV rzp_id=rzp_test_LHbhzBnKOdTaVY
 
-CMD ["npm","run","start",]
+CMD ["npm", "run", "start"]
 
 
