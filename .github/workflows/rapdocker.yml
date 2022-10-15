@@ -23,7 +23,7 @@ jobs:
         - docker build -t kiran2157/zomato-nginx ./nginx
 
         # log in docker
-        - echo ${{ secrets.DOCKER_SECRET }} | docker login -u ${{ secrets.DOCKER_USER}} --password-stdin
+        - echo ${{ secrets.SECRET_1 }} | docker login -u ${{ secrets.USER }} --password-stdin
 
         # push to docker hub
         - docker push kiran2157/zomato-client
