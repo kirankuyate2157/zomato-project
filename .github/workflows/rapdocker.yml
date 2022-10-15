@@ -1,22 +1,21 @@
 name: Docker  CI
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Scripts
-      run: |
-        - docker build -t kiran2157/zomato-client ./client
-        - docker build -t kiran2157/zomato-server ./server
-        - docker build -t kiran2157/zomato-nginx ./nginx
-        - echo ${{ secrets.SECRET_1 }} | docker login -u ${{ secrets.USER }} --password-stdin
-        - docker push kiran2157/zomato-client
-        - docker push kiran2157/zomato-server
-        - docker push kiran2157/zomato-nginx
+      - uses: actions/checkout@v3
 
+      - name: Scripts
+        run: |
+          docker build -t kiran2157/zomato-client ./client
+          docker build -t kiran2157/zomato-server ./server
+          docker build -t kiran2157/zomato-nginx ./nginx
+          echo ${{ secrets.SECRET_1 }} | docker login -u ${{ secrets.USER }} --password-stdin
+          docker push kiran2157/zomato-client
+          docker push kiran2157/zomato-server
+          docker push kiran2157/zomato-nginx
