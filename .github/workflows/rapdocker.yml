@@ -49,6 +49,7 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET }}
           application_name: zomato
           environment_name: Zomato-env
+          use_existing_version_if_available: true
           version_label: 1234
           region: ap-south-1
           deployment_package: deploy.zip
