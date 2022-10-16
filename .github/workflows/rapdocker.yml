@@ -19,3 +19,16 @@ jobs:
           docker push kiran2157/zomato-client
           docker push kiran2157/zomato-server
           docker push kiran2157/zomato-nginx
+
+  deploy:
+  # deploy to AWS EBS
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: zomato
+  env: Zomato-env
+  bucket_name: elasticbeanstalk-ap-south-1-001885395869
+  bucket_path: kkzomato
+  on:
+    branches: ["main"]
+  access_key_id: ${{secrets.AWS_KEY}}
+  secret_access_key: ${{secrets.AWS_SECRET}}

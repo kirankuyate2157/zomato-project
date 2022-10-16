@@ -1,0 +1,43 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3080:80"
+    depends_on:
+      - nodeserver
+      - client
+  nodeserver:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - MONGO_URL={secrets.MONGO_URL}
+      - GOOGLE_CLIENT_ID={secrets.GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET={secrets.GOOGLE_CLIENT_SECRET}
+      - AWS_S3_ACCESS_KEY={secrets.AWS_S3_ACCESS_KEY}
+      - AWS_S3_SECRET_KEY={secrets.AWS_S3_SECRET_KEY}
+      - MAILGUN__API__KEY={secrets.MAILGUN__API__KEY}
+      - MAILGUN__DOMAIN={secrets.MAILGUN__DOMAIN}
+      - rzp_secret={secrets.rzp_secret}
+      - rzp_id={secrets.rzp_id}
+      - NODE_ENV=production
+      - PORT=4000
+    ports:
+      - "4000:4000"
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    ports:
+      - "3000:3000"
