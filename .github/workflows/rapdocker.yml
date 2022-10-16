@@ -37,7 +37,7 @@ jobs:
           flags: "g"
 
       - name: Deploy to EB
-        uses: kirankuyate2157/beanstalk-deploy@v14
+        uses: einaregilsson/beanstalk-deploy@v14
         with:
           aws_access_key: ${{ secrets.AWS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET }}
@@ -45,7 +45,6 @@ jobs:
           environment_name: Zomato-env
           region: ap-south-1
           deployment_package: deploy.zip
-
   # deploy:
   # # deploy to AWS EBS
   # provider: elasticbeanstalk
