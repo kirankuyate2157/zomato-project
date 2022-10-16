@@ -20,19 +20,38 @@ jobs:
           docker push kiran2157/zomato-server
           docker push kiran2157/zomato-nginx
 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Latest Repo
+        uses: actions/checkout@master
+
+      - name: Generate Deployment Package
+        run: zip -r deploy.zip * -x "**node_modules**"
+
+      - name: Get timestamp
+        uses: gerred/actions/current-time@master
+        id: current-time
+
+      - name: Run string replace
+        uses: frabert/replace-string-action@master
+        id: format-time
+        with:
+          pattern: '[:\.]+'
+          string: "${{ steps.current-time.outputs.time }}"
+          replace-with: "-"
+          flags: "g"
+
       - name: Deploy to EB
-          on:
-            branches: ["main"]
-          access_key_id: ${{secrets.AWS_KEY}}
-          secret_access_key: ${{secrets.AWS_SECRET}}
+        uses: einaregilsson/beanstalk-deploy@v14
         with:
           aws_access_key: ${{ secrets.AWS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET }}
           application_name: zomato
           environment_name: Zomato-env
+          version_label: "zomato-deployment-${{ steps.format-time.outputs.replaced }}"
           region: ap-south-1
-          bucket_name: elasticbeanstalk-ap-south-1-001885395869
-          bucket_path: kkzomato
+          deployment_package: deploy.zip
 
   # deploy:
   # # deploy to AWS EBS
