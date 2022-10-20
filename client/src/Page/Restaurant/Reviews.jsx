@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 // components
-import ReviewCard from "../../Components/Restaurant/Reviews/reviewCard";
+import { ReviewCard, DefaultReviewCard, } from "../../Components/Restaurant/Reviews/reviewCard";
 import AddReviewCard from "../../Components/Restaurant/Reviews/AddReviewCard";
 
 import { getReviews } from "../../Redux/Reducer/Reviews/review.action";
@@ -30,6 +30,8 @@ const Reviews = () => {
           <div className="md:hidden">
             <AddReviewCard />
           </div>
+          <DefaultReviewCard />
+          <DefaultReviewCard />
           {reviews.map((review) => (
             <ReviewCard {...review} />
           ))}

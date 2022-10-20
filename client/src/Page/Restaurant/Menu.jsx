@@ -27,6 +27,8 @@ const Menu = () => {
   return (
     <>
       <div className="flex flex-wrap gap-3">
+        <MenuCollection menuTitle="Menu" pages="2" image="https://b.zmtcdn.com/data/menus/133/19486133/e1d0795e8889c0229b17b803ad673a7c.jpg" />
+        <MenuCollection menuTitle="Menu" pages="4" image="https://b.zmtcdn.com/data/menus/677/11677/dadb365a5dff4d99c2a78509f23a3fab.jpg" />
         <MenuCollection menuTitle="Menu" pages={menus.length} image={menus} />
         {/* <h1>hello menu</h1> */}
       </div>

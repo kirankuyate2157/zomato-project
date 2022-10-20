@@ -11,7 +11,7 @@ import ReactStars from "react-rating-stars-component";
 import MenuCollection from "../../Components/Restaurant/MenuCollection";
 import MenuSimilarRestaurantcard from "../../Components/Restaurant/MenuSimilarRestaurant";
 import { NextArrow, PrevArrow } from "../../Components/CarousalArrow";
-import ReviewCard from "../../Components/Restaurant/Reviews/reviewCard";
+import { ReviewCard, DefaultReviewCard } from "../../Components/Restaurant/Reviews/reviewCard";
 import Mapview from "../../Components/Restaurant/Mapview";
 
 import { getImage } from "../../Redux/Reducer/Image/Image.action";
@@ -103,6 +103,8 @@ const Overview = () => {
             </Link>
           </div>
           <div className="flex flex-wrap gap-3 my-4">
+            <MenuCollection menuTitle="Menu" pages="2" image="https://b.zmtcdn.com/data/menus/133/19486133/e1d0795e8889c0229b17b803ad673a7c.jpg" />
+            <MenuCollection menuTitle="Menu" pages="4" image="https://b.zmtcdn.com/data/menus/677/11677/dadb365a5dff4d99c2a78509f23a3fab.jpg" />
             <MenuCollection menuTitle="Menu" pages="3" image={menuImage} />
           </div>
           <h4 className="text-lg font-medium my-4">Cuisines</h4>
@@ -125,24 +127,36 @@ const Overview = () => {
             <div>
               <Slider {...settings}>
                 <MenuSimilarRestaurantcard
-                  image="https://b.zmtcdn.com/data/pictures/chains/5/18711475/4be376adb66b75764946d00a7dcf9991_featured_v2.jpg?output-format=webp"
+                  image="https://b.zmtcdn.com/data/pictures/chains/0/18401590/4e2654de938e0657dd8b1ca3efb05f50_o2_featured_v2.jpg"
+                  title="MOJO Pizza"
+                />
+                <MenuSimilarRestaurantcard
+                  image="https://b.zmtcdn.com/data/dish_photos/1cf/4fada61f3fb26cd5b1286313410ad1cf.jpg"
                   title="tea"
                 />
                 <MenuSimilarRestaurantcard
-                  image="https://b.zmtcdn.com/data/pictures/chains/5/18711475/4be376adb66b75764946d00a7dcf9991_featured_v2.jpg?output-format=webp"
-                  title="tea"
+                  image="https://b.zmtcdn.com/data/dish_photos/047/21d91c5a0d086a19882fc2c3540e0047.jpg"
+                  title="Veg Club Sandwich"
                 />
                 <MenuSimilarRestaurantcard
-                  image="https://b.zmtcdn.com/data/pictures/chains/5/18711475/4be376adb66b75764946d00a7dcf9991_featured_v2.jpg?output-format=webp"
-                  title="tea"
+                  image="https://b.zmtcdn.com/data/dish_photos/9fd/a8710239f6cd67ea3db7ae74a10d79fd.jpg"
+                  title="Paneer-Cheese Roll"
                 />
                 <MenuSimilarRestaurantcard
-                  image="https://b.zmtcdn.com/data/pictures/chains/5/18711475/4be376adb66b75764946d00a7dcf9991_featured_v2.jpg?output-format=webp"
-                  title="tea"
-                />
-                <MenuSimilarRestaurantcard
-                  image="https://b.zmtcdn.com/data/pictures/chains/5/18711475/4be376adb66b75764946d00a7dcf9991_featured_v2.jpg?output-format=webp"
-                  title="tea"
+                  image="https://b.zmtcdn.com/data/pictures/chains/9/18935969/5d372075b1ac3c14cda71b0e9b82924d_o2_featured_v2.jpg"
+                  title="Mendarian Ovak"
+                /><MenuSimilarRestaurantcard
+                  image="https://b.zmtcdn.com/data/pictures/chains/1/12511/8cbf90f3dbb6eaabad59566dc839f96c_o2_featured_v2.jpg"
+                  title="Cafe Durga "
+                /><MenuSimilarRestaurantcard
+                  image="https://b.zmtcdn.com/data/pictures/chains/9/18874569/ed369b5c2aa178c223ede5c870ac3d4f_o2_featured_v2.jpg"
+                  title="The good Bowl"
+                /><MenuSimilarRestaurantcard
+                  image="https://b.zmtcdn.com/data/pictures/0/13480/e551937843ca787fcfc1154cd654f113_o2_featured_v2.jpg"
+                  title="MH-12 pav-bhaji"
+                /><MenuSimilarRestaurantcard
+                  image="https://b.zmtcdn.com/data/pictures/6/10916/21308ba165f0fa91c32f2b49ee7d253d_o2_featured_v2.jpg"
+                  title="Global Punjab"
                 />
               </Slider>
             </div>
@@ -171,9 +185,10 @@ const Overview = () => {
             />
           </div>
           <div className="my-4 flex flex-col gap-4">
+            <DefaultReviewCard />
+            <DefaultReviewCard />
             <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
+
           </div>
           <div className="my-4 flex flex-col gap-4"></div>
         </div>

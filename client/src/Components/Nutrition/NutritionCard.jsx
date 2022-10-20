@@ -32,21 +32,20 @@ const NutritionCard = (props) => {
             <span className="text-gray-400">15</span>
           </div>
           <h3 className="text-xl font-bold text-gray-700">
-            Burn - Weight Balanace
+            {props.name}
           </h3>
           <p className="text-sm font-light text-gray-400">
-            This formula with VFill™ technology will help improve metabolism and
-            support fat burn.
+            {props.desc}
           </p>
           <div className="mt-4">
             <hr />
           </div>
           <div>
             <span>
-              <s className="text-gray-300 font-light mr-3">₹600</s>{" "}
-              <strong>₹320</strong>
+              <s className="text-gray-300 font-light mr-3">₹{props.price}</s>
+              <strong>₹{props.actualPrice}</strong>
             </span>
-            <p>Monthly pack - 30 capsules</p>
+            <p>{props.service}</p>
           </div>
         </div>
       </div>

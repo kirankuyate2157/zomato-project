@@ -41,6 +41,8 @@ const OrderOnline = () => {
     <>
       <div className="w-full h-screen flex">
         <aside className="hidden md:flex flex-col gap-3 border-r overflow-y-scroll border-gray-200 h-screen w-1/4">
+
+
           {menu.map((item) => (
             <MenuListContainer
               {...item}
@@ -49,6 +51,7 @@ const OrderOnline = () => {
               selected={selected}
             />
           ))}
+
         </aside>
         <div className="w-full  px-3 md:w-3/4">
           <div className="pl-3 mb-4">
