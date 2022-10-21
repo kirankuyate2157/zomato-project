@@ -20,23 +20,23 @@ jobs:
           docker push kiran2157/zomato-server
           docker push kiran2157/zomato-nginx
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Latest Repo
-        uses: actions/checkout@master
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Latest Repo
+  #       uses: actions/checkout@master
 
-      - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v14
-        with:
-          aws_access_key: ${{ secrets.AWS_KEY }}
-          aws_secret_key: ${{ secrets.AWS_SECRET }}
-          application_name: zomato
-          environment_name: Zomato-env
-          use_existing_version_if_available: true
-          version_label: 1234
-          region: ap-south-1
-          deployment_package: docker-compose.yml
+  #     - name: Deploy to EB
+  #       uses: einaregilsson/beanstalk-deploy@v14
+  #       with:
+  #         aws_access_key: ${{ secrets.AWS_KEY }}
+  #         aws_secret_key: ${{ secrets.AWS_SECRET }}
+  #         application_name: zomato
+  #         environment_name: Zomato-env
+  #         use_existing_version_if_available: true
+  #         version_label: 1234
+  #         region: ap-south-1
+  #         deployment_package: docker-compose.yml
   # deploy:
   # # deploy to AWS EBS
   # provider: elasticbeanstalk
