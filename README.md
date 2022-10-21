@@ -1,9 +1,14 @@
 # zomato-project
 
+## Hero
+
+
 ![image](https://user-images.githubusercontent.com/84271800/196987835-bf94c3d5-eabe-4952-93bf-5cd4a81ce67f.png)
 ![image](https://user-images.githubusercontent.com/84271800/196976707-074e3823-0fb2-4d96-969f-21b235990f0a.png)
 
 <br>
+
+## Authountication
 
 |SignUp|SignIn|
 |:-:|:-:|
@@ -11,19 +16,9 @@
 |![First Image](https://user-images.githubusercontent.com/84271800/197172514-60b78e13-c4ed-44d8-8de0-2a3da46e4eb9.png)|![Second Image](https://user-images.githubusercontent.com/84271800/197174311-97d966dc-b849-45e9-9b8d-e529ddca4af3.png)|
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <br>
+
+## Main page Delivery
 
 ![image](https://user-images.githubusercontent.com/84271800/196985670-a5d284d6-6ba9-4db3-b40c-9f3f37e191eb.png)
 ![image](https://user-images.githubusercontent.com/84271800/196978532-99aacf5b-d3ac-48dc-8369-da1ad5e7920a.png)
@@ -31,20 +26,35 @@
 
 <br>
 
+## Dining Out 
+
 ![image](https://user-images.githubusercontent.com/84271800/196986306-c4d44ea5-7792-458d-b2f0-b31c65b909f9.png)
 ![image](https://user-images.githubusercontent.com/84271800/196979022-c917f0c5-fc09-4f98-b35f-7d9e7564d0e3.png)
 
 <br>
+
+## Collection/Dining
+
+![image](https://user-images.githubusercontent.com/84271800/197181542-3809a642-307c-40d6-b0de-f148f5f0935d.png)
+
+
+<br>
+
+## NightLife
 
 ![image](https://user-images.githubusercontent.com/84271800/196986720-e18c3c98-06da-46bb-aa88-10d230d95300.png)
 ![image](https://user-images.githubusercontent.com/84271800/196983482-342312ec-fb32-4933-9e07-d16d2e26e4b6.png)
 
 <br>
 
+## Nutritions
+
 ![image](https://user-images.githubusercontent.com/84271800/196987014-d7441a71-77e3-46ae-9b77-00fea14c75cd.png)
 ![image](https://user-images.githubusercontent.com/84271800/196984490-d00036c3-c970-4511-ace3-322260c9909f.png)
 
 <br>
+
+## Restaurant Overview
 
 ![image](https://user-images.githubusercontent.com/84271800/197175085-97aeb999-f974-4895-b461-8bd16e975638.png)
 
